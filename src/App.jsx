@@ -1,13 +1,14 @@
 import Swal from 'sweetalert2'
 
-
 function App() {
+
+  let accessKey = import.meta.env.VITE_FORM_ACCESS_KEY
 
   const onSubmit = async (event) => {
     event.preventDefault();
     const formData = new FormData(event.target);
 
-    formData.append("access_key", "6ff121e6-12bf-4c5a-9913-3db807af6d59");
+    formData.append("access_key", accessKey);
 
     const object = Object.fromEntries(formData);
     const json = JSON.stringify(object);
